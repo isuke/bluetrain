@@ -1,0 +1,83 @@
+# ver: 0.8.4
+
+inherit_from:
+  - .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'Rakefile'
+    - 'db/migrations/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+  DisplayCopNames: true
+
+Rails:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 160
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+Layout/AlignParameters:
+  EnforcedStyle: with_first_parameter
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/ExtraSpacing:
+  Enabled: false
+
+# for the following case.
+#   validates :project , presence: true
+#   validates :title   , presence: true
+#   validates :status  , presence: true
+Layout/SpaceBeforeComma:
+  Enabled: false
+
+# for the following case.
+#   expect(json['title']).to    eq 'implement hoge'
+#   expect(json['status']).to   eq 'todo'
+#   expect(json['priority']).to eq 1
+#   expect(json['point']).to    eq 1
+Layout/SpaceBeforeFirstArg:
+ Enabled: false
+
+# for the following case.
+#   db       = ENV['db']       || 'apollo'
+#   user     = ENV['user']     || 'postgres'
+#   password = ENV['password'] || ''
+Layout/SpaceAroundOperators:
+  Enabled: false
