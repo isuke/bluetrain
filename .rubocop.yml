@@ -1,4 +1,4 @@
-# ver: 0.8.4
+# ver: 0.8.6
 
 inherit_from:
   - .rubocop_todo.yml
@@ -48,6 +48,9 @@ Style/ClassAndModuleChildren:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
+
 Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
 
@@ -59,6 +62,9 @@ Layout/EmptyLinesAroundBlockBody:
 
 Layout/ExtraSpacing:
   Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
 
 # for the following case.
 #   validates :project , presence: true

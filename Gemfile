@@ -5,7 +5,7 @@ ruby '2.4.2'
 #
 # Core
 #
-gem 'hanami',       '~> 1.1'
+gem 'hanami'      , '~> 1.1'
 gem 'hanami-model', '~> 1.1'
 gem 'rake'
 
@@ -19,18 +19,25 @@ gem 'pg'
 #
 gem 'slim'
 
+#
+# OAuth
+#
+gem 'omniauth-google-oauth2'
+
 group :development do
   gem 'rubocop'
   gem 'shotgun'
 end
 
 group :test, :development do
+  gem 'debase', '0.2.2.beta10'
   gem 'dotenv', '~> 2.0'
   gem 'faker'
   gem 'hanami-fabrication'
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-stack_explorer'
+  gem 'ruby-debug-ide', '0.6.0'
 end
 
 group :test do

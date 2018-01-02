@@ -1,0 +1,6 @@
+h1 Home
+
+- if current_user.nil?
+  a(href="/auth/google_oauth2") Login
+- else
+  image(src=current_user.image_path)

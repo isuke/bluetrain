@@ -1,0 +1,48 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Attach",
+            "type": "Ruby",
+            "request": "attach",
+            "cwd": "${workspaceRoot}",
+            "remoteWorkspaceRoot": "${workspaceRoot}",
+            "remoteHost": "127.0.0.1",
+            "remotePort": "1234"
+        },
+        {
+            "name": "Hanami server",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/vendor/bin/hanami",
+            "useBundler": true,
+            "args": [
+                "server"
+            ]
+        },
+        {
+            "name": "RSpec - open spec file",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/vendor/bin/rspec",
+            "args": [
+                "${file}"
+            ],
+            "useBundler": true
+        },
+        {
+            "name": "Rubocop - open spec file auto currect",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/vendor/bin/rubocop",
+            "args": [
+                "${file}",
+                "-a"
+            ],
+            "useBundler": true
+        }
+    ]
+}
