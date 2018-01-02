@@ -54,7 +54,7 @@ RSpec.describe UserRepository, type: :repository do
         expect do
           subject
         end.to raise_error(Hanami::Model::NotNullConstraintViolationError)
-         .and change(user_repositiy, :count).by(0)
+          .and change(user_repositiy, :count).by(0)
       end
     end
   end

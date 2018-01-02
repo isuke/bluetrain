@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.2'
+ruby '2.5.0'
 
 #
 # Core
@@ -30,7 +30,7 @@ group :development do
 end
 
 group :test, :development do
-  gem 'debase', '0.2.2.beta10'
+  gem 'debase', '0.2.2.beta14'
   gem 'dotenv', '~> 2.0'
   gem 'faker'
   gem 'hanami-fabrication'

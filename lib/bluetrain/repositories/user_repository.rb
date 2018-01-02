@@ -9,7 +9,7 @@ class UserRepository < Hanami::Repository
       uid:        auth.uid,
       name:       auth.info.name,
       email:      auth.info.email,
-      image_path: auth.info.image
+      image_path: auth.info.image,
     )
   end
 
