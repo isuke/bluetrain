@@ -1,2 +1,15 @@
 {
+    "ruby.lint": {
+        "rubocop": true,
+        "ruby": true
+    },
+    "ruby.rubocop.onSave": true,
+    "ruby.rubocop.executePath": "./vendor/bin/",
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.tabSize": 2,
+    "[markdown]": {
+        "editor.tabSize": 4,
+    }
 }
