@@ -9,7 +9,6 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "editor.tabSize": 2,
-    "[markdown]": {
-        "editor.tabSize": 4,
-    }
+    "solargraph.useBundler": true,
+    "solargraph.withSnippets": true
 }
