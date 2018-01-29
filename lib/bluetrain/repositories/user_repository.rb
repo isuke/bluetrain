@@ -1,4 +1,9 @@
 class UserRepository < Hanami::Repository
+  associations do
+    has_many :members
+    has_many :projects, through: :members
+  end
+
   def find_by_provider_and_uid provider, uid
     users.where(provider: provider, uid: uid).one
   end

@@ -12,8 +12,8 @@ Hanami::Model.migration do
       column :created_at, DateTime, null: false
       column :updated_at, DateTime, null: false
 
-      index [:provider, :uid], unique: true
-      index [:email]         , unique: true
+      index %i[provider uid], unique: true
+      index %i[email]       , unique: true
     end
   end
 end
