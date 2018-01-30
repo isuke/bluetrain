@@ -1,6 +1,7 @@
 require 'hanami/helpers'
+require 'hanami/assets'
 
-module Web
+module Api
   class Application < Hanami::Application
     configure do
       ##
@@ -83,19 +84,18 @@ module Web
       sessions :cookie, secret: ENV['SESSIONS_SECRET']
 
       # Configure Rack middleware for this application
-      middleware.use OmniAuth::Builder do
-        provider :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
-      end
+      #
+      # middleware.use Rack::Protection
 
       # Default format for the requests that don't specify an HTTP_ACCEPT header
       # Argument: A symbol representation of a mime type, defaults to :html
       #
-      # default_request_format :html
+      default_request_format :json
 
       # Default format for responses that don't consider the request format
       # Argument: A symbol representation of a mime type, defaults to :html
       #
-      # default_response_format :html
+      default_response_format :json
 
       # HTTP Body parsers
       # Parse non GET responses body for a specific mime type
@@ -103,24 +103,12 @@ module Web
       #             (only `:json` is supported)
       #           Object, the parser
       #
-      # body_parsers :json
+      body_parsers :json
 
       # When it's true and the router receives a non-encrypted request (http),
       # it redirects to the secure equivalent (https). Disabled by default.
       #
       # force_ssl true
-
-      ##
-      # TEMPLATES
-      #
-
-      # The layout to be used by all views
-      #
-      layout :application # It will load Web::Views::ApplicationLayout
-
-      # The relative path to templates
-      #
-      templates 'templates'
 
       ##
       # SECURITY
@@ -216,7 +204,7 @@ module Web
       # FRAMEWORKS
       #
 
-      # Configure the code that will yield each time Web::Action is included
+      # Configure the code that will yield each time Api::Action is included
       # This is useful for sharing common functionality
       #
       # See: http://www.rubydoc.info/gems/hanami-controller#Configuration
@@ -224,7 +212,7 @@ module Web
         include Web::Authentication
       end
 
-      # Configure the code that will yield each time Web::View is included
+      # Configure the code that will yield each time Api::View is included
       # This is useful for sharing common functionality
       #
       # See: http://www.rubydoc.info/gems/hanami-view#Configuration

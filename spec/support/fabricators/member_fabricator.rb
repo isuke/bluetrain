@@ -1,0 +1,2 @@
+Fabricator(:member) do
+end
