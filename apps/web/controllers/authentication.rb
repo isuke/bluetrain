@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web
   module Authentication
     def self.included action

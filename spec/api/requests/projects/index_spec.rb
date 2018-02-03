@@ -1,12 +1,16 @@
-RSpec.describe 'GET /api/projects' do
+# frozen_string_literal: true
+
+RSpec.describe 'GET /api/projects', type: :request do
   include Rack::Test::Methods
 
   def app
     Hanami.app
   end
 
-  let!(:user1) { Fabricate.create :user }
-  let!(:user2) { Fabricate.create :user }
+  subject { last_response }
+
+  let!(:user1)    { Fabricate.create :user }
+  let!(:user2)    { Fabricate.create :user }
   let!(:project1) { Fabricate.create :project }
   let!(:project2) { Fabricate.create :project }
   let!(:project3) { Fabricate.create :project }
@@ -15,11 +19,8 @@ RSpec.describe 'GET /api/projects' do
 
   before { get path }
 
-  subject { last_response }
-
   # TODO: login
   xit "return curennt user's projects" do
     is_expected.to be_ok
   end
-
 end

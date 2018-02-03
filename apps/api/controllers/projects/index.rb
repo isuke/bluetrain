@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api::Controllers::Projects
   class Index
     include Api::Action
@@ -6,7 +8,7 @@ module Api::Controllers::Projects
 
     def call _params
       @repositiry = ProjectRepository.new
-      @projects = @repositiry.by_user_id(current_user.id)
+      @projects   = @repositiry.by_user_id(current_user.id)
     end
   end
 end

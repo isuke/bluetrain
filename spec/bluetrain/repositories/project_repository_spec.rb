@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe ProjectRepository, type: :repository do
   let(:user_repository)    { UserRepository.new }
   let(:project_repository) { ProjectRepository.new }
@@ -10,13 +12,13 @@ RSpec.describe ProjectRepository, type: :repository do
   end
 
   describe '#by_user_id' do
+    subject { project_repository.by_user_id(user1.id).to_a }
+
     let!(:user1) { Fabricate.create :user }
-    let!(:user2) { Fabricate.create :user }
+    let!(:user2)    { Fabricate.create :user }
     let!(:project1) { Fabricate.create :project }
     let!(:project2) { Fabricate.create :project }
     let!(:project3) { Fabricate.create :project }
-
-    subject { project_repository.by_user_id(user1.id).to_a }
 
     before do
       Fabricate.create :member, user_id: user1.id, project_id: project1.id

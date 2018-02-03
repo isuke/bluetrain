@@ -215,6 +215,8 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
+    rubocop-rspec (1.22.2)
+      rubocop (>= 0.52.1)
     ruby-debug-ide (0.6.0)
       rake (>= 0.8.1)
     ruby-progressbar (1.9.0)
@@ -265,6 +267,7 @@ DEPENDENCIES
   rake
   rspec
   rubocop
+  rubocop-rspec
   ruby-debug-ide (= 0.6.0)
   shotgun
   slim

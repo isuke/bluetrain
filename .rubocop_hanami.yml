@@ -1,0 +1,7 @@
+AllCops:
+  Exclude:
+    - 'Rakefile'
+    - 'db/migrations/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'

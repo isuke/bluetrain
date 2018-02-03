@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web::Controllers::Page
   class Home
     include Web::Action

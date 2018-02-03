@@ -1,19 +1,14 @@
-# ver: 0.8.6
+# ver: 0.9.2
+# rubocop: v0.52
 
 inherit_from:
   - .rubocop_todo.yml
+  - .rubocop_hanami.yml
+  - .rubocop_rspec.yml
 
 AllCops:
-  TargetRubyVersion: 2.4
-  Exclude:
-    - 'Rakefile'
-    - 'db/migrations/*'
-    - 'bin/**/*'
-    - 'vendor/**/*'
+  TargetRubyVersion: 2.5
   DisplayCopNames: true
-
-Rails:
-  Enabled: false
 
 Metrics/LineLength:
   Max: 160
@@ -28,7 +23,7 @@ Metrics/BlockLength:
   Enabled: false
 
 Style/StringLiterals:
-  Enabled: false
+  ConsistentQuotesInMultiline: true
 
 Style/AsciiComments:
   Enabled: false
@@ -46,10 +41,24 @@ Style/ClassAndModuleChildren:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
-  Enabled: false
+  Enabled: true
 
 Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
+
+Style/BarePercentLiterals:
+  EnforcedStyle: percent_q
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+# Style/TrailingCommaInArrayLiteral:
+#   EnforcedStyleForMultiline: consistent_comma
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+  EnforcedLastArgumentHashStyle: always_inspect
 
 Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
@@ -57,11 +66,29 @@ Layout/AccessModifierIndentation:
 Layout/AlignParameters:
   EnforcedStyle: with_first_parameter
 
+Layout/CaseIndentation:
+  EnforcedStyle: end
+  IndentOneStep: true
+  IndentationWidth: 2
+
 Layout/EmptyLinesAroundBlockBody:
-  Enabled: false
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Layout/IndentHash:
+  EnforcedStyle: consistent
 
 Layout/ExtraSpacing:
-  Enabled: false
+  AllowForAlignment: true
+  ForceEqualSignAlignment: true
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented

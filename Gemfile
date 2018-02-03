@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 ruby '2.5.0'
@@ -26,6 +28,7 @@ gem 'omniauth-google-oauth2'
 
 group :development do
   gem 'rubocop'
+  gem 'rubocop-rspec'
   gem 'shotgun'
 end
 

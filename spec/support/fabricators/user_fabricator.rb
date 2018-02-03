@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Fabricator(:user) do
   provider 'google_oauth2'
   uid      { SecureRandom.hex }

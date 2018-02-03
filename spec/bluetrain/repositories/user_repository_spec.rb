@@ -1,21 +1,23 @@
+# frozen_string_literal: true
+
 RSpec.describe UserRepository, type: :repository do
   let(:user_repositiy) { UserRepository.new }
 
   before { user_repositiy.clear }
 
   describe '#find_by_provider_and_uid' do
-    let!(:user) { Fabricate.create :user }
-
     subject { user_repositiy.find_by_provider_and_uid(provider, uid) }
 
-    context 'provider and uid is exsited' do
+    let!(:user) { Fabricate.create :user }
+
+    context 'when provider and uid is exsited' do
       let(:provider) { user.provider }
       let(:uid)      { user.uid }
 
       it { is_expected.to eq user }
     end
 
-    context 'provider and uid is NOT exsited' do
+    context 'when provider and uid is NOT exsited' do
       let(:provider) { user.provider }
       let(:uid)      { 'foo' }
 
@@ -24,10 +26,9 @@ RSpec.describe UserRepository, type: :repository do
   end
 
   describe '#register' do
-
     subject { user_repositiy.register(auth) }
 
-    context 'arg is currect' do
+    context 'when arg is currect' do
       let(:auth) do
         info = Struct.new(:name, :email, :image)
           .new('foo', 'foo@example.com', '/hoge/hoge/foo.png')
@@ -42,7 +43,7 @@ RSpec.describe UserRepository, type: :repository do
       end
     end
 
-    context 'arg is incurrect' do
+    context 'when arg is incurrect' do
       let(:auth) do
         info = Struct.new(:name, :email, :image)
           .new(nil, 'foo@example.com', '/hoge/hoge/foo.png')
